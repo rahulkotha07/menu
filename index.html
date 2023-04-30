@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>The Old School Cafe</title>
+    <title>The Old School Caffé</title>
     <style>
       #loader {
-        border: 10px solid #f3f3f3;
-        border-top: 10px solid blue;
-        border-radius: 50%;
-        width: 80px;
-        height: 80px;
-        animation: spin 2s linear infinite;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         position: fixed;
-        z-index: 999;
         top: 0;
         bottom: 0;
         left: 0;
         right: 0;
         margin: auto;
+        z-index: 999;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: spin 2s linear infinite;
+      }
+
+      #loader:before {
+        content: 'TOSC';
+        display: block;
+        position: absolute;
+        align-items: center;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 30px;
+        font-weight: bold;
       }
 
       @keyframes spin {
@@ -41,7 +50,7 @@
     }
 
       h1 {
-        font-size: 36px;
+        font-size: 48px;
         font-family: Arial, sans-serif;
       }
 
@@ -73,8 +82,8 @@
       });
     </script>
 
-	<img src="Logo.jpeg" alt="Image1">
-	<img src="Image1.jpeg" alt="Image1">
-	<img src="Image2.jpeg" alt="Image2">
+    <img src="Logo.jpeg" alt="Logo">
+    <img src="Image1.jpeg" alt="Image1">
+    <img src="Image2.jpeg" alt="Image2">
   </body>
 </html>
