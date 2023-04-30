@@ -1,26 +1,77 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>The Old School Caffé</title>
+    <title>The Old School Cafe</title>
     <style>
+      #loader {
+        border: 10px solid #f3f3f3;
+        border-top: 10px solid blue;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        animation: spin 2s linear infinite;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      #content {
+        text-align: center;
+        z-index: 999
+        margin:auto;
+      }
+
       h1 {
         font-size: 36px;
         font-family: Arial, sans-serif;
-        text-align: center;
-        margin-top: 30px;
       }
-      
+
       img {
-        display: block;
+        display: none;
         margin: auto;
         max-width: 100%;
         height: auto;
       }
     </style>
-</head>
-<body>
+  </head>
+
+  <body>
+    <div id="loader"></div>
+    <div id="content">
+      <h1>Welcome to The Old School Caffé</h1>
+    </div>
+
+    <script>
+      window.addEventListener('load', () => {
+        const loader = document.getElementById('loader');
+        const content = document.getElementById('content');
+        const images = document.querySelectorAll('img');
+        setTimeout(() => {
+          loader.style.display = 'none';
+          content.style.display = 'none';
+          images.forEach(img => img.style.display = 'block');
+        }, 2000);
+      });
+    </script>
+
 	<img src="Logo.jpeg" alt="Image1">
 	<img src="Image1.jpeg" alt="Image1">
 	<img src="Image2.jpeg" alt="Image2">
-</body>
+  </body>
 </html>
